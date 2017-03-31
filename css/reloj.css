@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -box-sizing:border-box;
+}
+
+button{
+  margin: 10px;
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.temporizadores{
+  font-family: Oswald, Arial;
+  width: 100%;
+  padding: 20px;
+  font-size:2em;
+  text-align: center;
+  display:inline-grid;
+  background: rgba(0,0,0,.5);
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+}
