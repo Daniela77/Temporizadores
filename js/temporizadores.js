@@ -1,23 +1,22 @@
 $(document).ready(function () {
     'use strict';
-    var valor = 0;
-
     function cargarTemporizadores(temporizadores) {
         var cantTemp, i, segundos, inicTemp;
         cantTemp = $("#inputTemp").val();
-         $("#inputTemp").val("");
+        //  $("#inputTemp").val("");
         for (i = 0; i < cantTemp; i++) {
             segundos = Math.floor((Math.random() * 5) + 1);
             inicTemp = segundos * 1000;
             temporizadores.push(inicTemp);
+            console.log(temporizadores);
         }
         return temporizadores;
     }
 
     function crearBoton(nombre) {
-        $("body").append("<button id=tempbutton" + nombre + ">Boton " + nombre + "</button>");
-        $("#tempbutton" + nombre).on("click", function () {
-            alert(" Boton: " + nombre);
+        $("body").append("<button class=tempbutton" + nombre + ">Boton " + nombre + "</button>");
+        $(".tempbutton" + nombre).off().on("click", function () {
+            alert("Hola soy el boton: " + nombre);
         });
     }
 
@@ -25,8 +24,7 @@ $(document).ready(function () {
         var i, tiempoinicial;
         for (i = 0; i < temporizadores.length; i++) {
             tiempoinicial = temporizadores[i];
-            valor = valor + 1;
-            setTimeout(crearBoton, tiempoinicial, valor);
+            setTimeout(crearBoton, tiempoinicial, i);
         }
     }
 
