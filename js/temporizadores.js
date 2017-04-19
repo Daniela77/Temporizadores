@@ -1,6 +1,5 @@
 $(document).ready(function () {
     'use strict';
-    var valor=0;
     function cargarTemporizadores(temporizadores) {
         var cantTemp, i, segundos, inicTemp;
         cantTemp = $("#inputTemp").val();
@@ -14,10 +13,11 @@ $(document).ready(function () {
         return temporizadores;
     }
 
-    function crearBoton(nombre, pos) {
-        $("body").append("<button class=tempbutton" + nombre + ">Boton " + pos + "</button>");
-        $(".tempbutton" + nombre).on("click", function () {
-            alert("Boton: " + pos);
+    function crearBoton(nombre) {
+        var btn = $("<button class=tempbutton" + nombre + ">Boton " + nombre + "</button>");
+        $("body").append(btn);
+        btn.on("click", function () {
+            alert("Hola soy el boton: " + nombre);
         });
     }
 
@@ -25,8 +25,7 @@ $(document).ready(function () {
         var i, tiempoinicial;
         for (i = 0; i < temporizadores.length; i++) {
             tiempoinicial = temporizadores[i];
-             valor=valor+1;
-            setTimeout(crearBoton, tiempoinicial, valor,i);
+            setTimeout(crearBoton, tiempoinicial, i);
         }
     }
 
